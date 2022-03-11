@@ -41,12 +41,12 @@ class nat_amc_zynqup_sdr4(adrv9009):
 
     parameters:
         uri: type=string
-            URI of context with ADRV9009-ZU11EG
+            URI of context with NAT-AMC-ZYNQUP-SDR
         jesd_monitor: type=boolean
             Boolean flag to enable JESD monitoring. jesd input is
             ignored otherwise.
         jesd: type=adi.jesd
-            JESD object associated with ADRV9009-ZU11EG
+            JESD object associated with NAT-AMC-ZYNQUP-SDR
     """
 
     _rx_channel_names = [
@@ -58,14 +58,6 @@ class nat_amc_zynqup_sdr4(adrv9009):
         "voltage2_q",
         "voltage3_i",
         "voltage3_q",
-        "voltage4_i",
-        "voltage4_q",
-        "voltage5_i",
-        "voltage5_q",
-        "voltage6_i",
-        "voltage6_q",
-        "voltage7_i",
-        "voltage7_q",
     ]
     _tx_channel_names = [
         "voltage0",
@@ -76,14 +68,6 @@ class nat_amc_zynqup_sdr4(adrv9009):
         "voltage5",
         "voltage6",
         "voltage7",
-        "voltage8",
-        "voltage9",
-        "voltage10",
-        "voltage11",
-        "voltage12",
-        "voltage13",
-        "voltage14",
-        "voltage15",
     ]
     _device_name = ""
 
