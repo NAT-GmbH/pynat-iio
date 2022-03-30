@@ -108,6 +108,28 @@ class nat_amc_zynqup_sdr4(adrv9009):
         self._clock_chip.reg_write(0xCC + offs, int(digital) & 0x1F)
 
     @property
+    def rx_sampling_frequency(self):
+        """rx_sampling_frequency: Set RX Sampling Frequency Decimation
+        Available frequencies: 245760000, 30720000, 15360000, 7680000, 3840000
+        """
+        return self._get_iio_attr("voltage0_i", "sampling_frequency", False, self._rxadc)
+
+    @rx_sampling_frequency.setter
+    def rx_sampling_frequency(self, value):
+        self._set_iio_attr("voltage0_i", "sampling_frequency", False, value, self._rxadc)
+
+    @property
+    def tx_sampling_frequency(self):
+        """tx_sampling_frequency: Set TX Sampling Frequency Interpolation
+        Available frequencies: 245760000, 30720000, 15360000, 7680000, 3840000
+        """
+        return self._get_iio_attr("voltage0", "sampling_frequency", True, self._txdac)
+
+    @tx_sampling_frequency.setter
+    def tx_sampling_frequency(self, value):
+        self._set_iio_attr("voltage0", "sampling_frequency", True, value, self._txdac)
+
+    @property
     def frequency_hopping_mode_chip_b(self):
         """frequency_hopping_mode_chip_b: Set Frequency Hopping Mode"""
         return self._get_iio_attr(
