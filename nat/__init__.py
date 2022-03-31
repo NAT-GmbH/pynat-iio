@@ -36,5 +36,5 @@ from nat.nat_amc_zynqup_sdr4 import nat_amc_zynqup_sdr4
 
 from nat.nat_amc_zynqup_sdr8 import nat_amc_zynqup_sdr8
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 name = "N.A.T. GmbH Hardware Interfaces"
